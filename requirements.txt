@@ -1,0 +1,8 @@
+appworld==0.1.3.post1
+torch>=2.1
+transformers>=4.44
+numpy>=1.26
+scipy>=1.11
+jinja2>=3.1
+# optional, used only if you point the agent at a hosted Qwen endpoint
+openai>=1.40

@@ -1,0 +1,48 @@
+{
+  "llm": {
+    "backend": "hf",
+    "model": "Qwen/Qwen3-4B",
+    "reconstructor_model": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "auto",
+    "dtype": "auto",
+    "max_new_tokens": 512,
+    "temperature": 0.0,
+    "load_in_4bit": false,
+    "base_url": null,
+    "api_key_env": "OPENAI_API_KEY"
+  },
+  "memory": {
+    "embedder": "hf",
+    "embedder_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embed_dim": 512,
+    "retrieve_k": 6,
+    "basis_k": 5,
+    "recon_samples": 1,
+    "recon_temperature": 0.7,
+    "proxy_low": 0.30,
+    "proxy_high": 0.92,
+    "w_cos": 0.5,
+    "w_nli": 0.5,
+    "importance": "heuristic",
+    "imp_recency_halflife": 40,
+    "imp_recency_weight": 0.30,
+    "imp_access_weight": 0.25,
+    "imp_specificity_weight": 0.25,
+    "imp_task_link_weight": 0.20
+  },
+  "forget": {
+    "budget_frac": 0.25,
+    "tau": 0.65,
+    "gamma": 1.0,
+    "objective": "ra_fm",
+    "sweep_every": 8
+  },
+  "run": {
+    "dataset": "dev",
+    "experiment_name": "ra_fm_qwen3b_dev",
+    "max_interactions": 40,
+    "limit": null,
+    "seed": 0,
+    "output_dir": "experiments"
+  }
+}
